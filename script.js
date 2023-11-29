@@ -13,12 +13,14 @@ let todos = [];
 function addTodo(e) {
   e.preventDefault();
 
-  todos.push({
-    id: Date.now(),
-    title: addTodoTitleInput.value,
-    description: addTodoDescInput.value,
-    complete: false,
-  });
+  addTodoDescInput.value
+    ? todos.push({
+        id: Date.now(),
+        title: addTodoTitleInput.value,
+        description: addTodoDescInput.value,
+        complete: false,
+      })
+    : null;
 
   renderTodos();
 
